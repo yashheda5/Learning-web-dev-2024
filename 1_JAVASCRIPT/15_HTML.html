@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mp=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("i am inside promise")
+            },5000)
+            resolve(1992);
+            // reject(new Error("error is there"));
+        });
+        console.log("hello world")
+        // mp.then((value)=> {console.log(value)})
+        // mp.catch((error)=> {console.log("received error")})
+        mp.then((value)=> {console.log(value)},(error)=> {console.log("received error")})
+    </script>
+</body>
+</html>

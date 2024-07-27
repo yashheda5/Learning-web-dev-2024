@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function utility() {
+            let delhiMasuam = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Delhi me bohot garmi hai");
+                }, 1000); // Correct placement of timeout
+            });
+
+            let hydMausam = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Hyderabad me bohot garmi hai");
+                }, 3000); // Correct placement of timeout
+            });
+            let dm= await  delhiMasuam;
+            let hm =await hydMausam;
+            return [dm, hm]; // Correct array return
+        }
+    </script>
+</body>
+</html>

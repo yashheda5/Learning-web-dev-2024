@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let wada1 = new Promise(function(resolve, reject){
+            setTimeout(()=>{
+                console.log("setTimeout 1 started");
+                resolve(1234);
+            },5000);
+        });
+
+        let output = wada1.then(()=>{
+            let wada2= new Promise(function(resolve, reject){
+                
+                    resolve("wada 2 resolved");
+               
+            });
+            return wada2;
+        });
+
+        output.then((value) => console.log(value));
+    </script>
+</body>
+</html>
