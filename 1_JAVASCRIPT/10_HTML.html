@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="font-size: 3em;">wassup</p>
+    <script>
+       
+        let content =document.querySelector("p");
+        content.style.color="red";
+        content.addEventListener("click",function() {
+            content.style.fontSize="10rem";
+        });
+
+        function eventFunction(){
+            console.log("i have clicked");
+        }
+        document.addEventListener("click",eventFunction);
+        document.removeEventListener("click",eventFunction);
+    </script>
+</body>
+</html>
