@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>yash <span>heda</span></p>
+    <script>
+        function print(event){
+            if(event.target.nodeName === "SPAN"){
+                event.target.style.color = 'red';
+            }
+        }
+        let content = document.getElementsByTagName("p");
+        for (let i = 0; i < content.length; i++) {
+            content[i].addEventListener("click", print);
+        }
+    </script>
+</body>
+</html>

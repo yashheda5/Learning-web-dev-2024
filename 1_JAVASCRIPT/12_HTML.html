@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        function colorme(content){
+            content.target.style.backgroundColor = "red";
+        }
+      let myDiv = document.createElement("div");
+      document.body.appendChild(myDiv);
+      for (let i = 0; i < 100; i++) {
+        let content = document.createElement("p");
+        content.textContent = "this is new para " + i;
+        content.addEventListener("click",colorme);
+        myDiv.appendChild(content);
+
+      }
+    </script>
+  </body>
+</html>

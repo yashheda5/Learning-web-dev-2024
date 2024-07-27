@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="www.google.com" target="_blank">google1</a> <br>
+    <a href="www.google.com" id="#1" target="_blank">google2</a>
+    <script>
+        document.addEventListener("click",function(event){
+        console.log(event);
+        let content =document.getElementById("#1");
+        content.addEventListener("click",function(event){ 
+            event.preventDefault();
+            console.log("randi rona ");
+          });
+    })
+
+    let myDiv=document.createElement("div");
+    myDiv.appendChild(document);
+    for(let i=0;i<100;i++){
+        let content =document.createElement("p");
+        content.textContent ="this is new para "+i;
+        mydiv.appendChild(content);
+    }
+    </script>
+</body>
+</html>
