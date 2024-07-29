@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & Tailwind CSS Starter Pack</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <p id="weather">0</p>
+    
+    <script>
+        function toCelsius(event){
+            return event-273;
+        }
+        async function getweather(){
+            try{
+        console.log("hello guys!");
+        let lat =12.9767;
+        let lon = 77.5713;
+        let API_key="34df40ecf3e4f1ca62219c399a0a8e2a";
+        let result =await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}`);
+        let data= await result.json();
+        console.log(data);
+        let setW=document.querySelector("#weather");
+        setW.textContent = Math.round(toCelsius(data.main.temp)) +" *C";
+        }catch(e){
+            console.log("error found ",e)
+        }
+    } 
+ 
+        getweather();
+    </script>
+</body>
+
+</html>
